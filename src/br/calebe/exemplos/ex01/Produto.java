@@ -10,6 +10,10 @@ public class Produto {
         this.preco = preco;
     }
 
+    Produto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public double getPreco() {
         return preco;
     }
