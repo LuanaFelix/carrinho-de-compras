@@ -4,7 +4,7 @@
  */
 package br.calebe.exemplos.ex01;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,29 +20,35 @@ public class ProdutoTest {
     @Before
     public void criandoProduto() {
         produto = new Produto("Samsung Galaxy Duos", 500.0);
-    }
-    
-    
-    @Test
-    public double pegandoPreco() {
-        produto = new Produto("Samsung Galaxy Duos", 500.0);
-        return produto.getPreco();
-    }
    
-    @Test
-    public boolean comparaObjeto() {
-        produto = new Produto("Samsung Galaxy Duos", 500.0);
-        Object obj = new Produto("Samsung Galaxy Duos", 500.0);
-        return produto.equals((Produto) obj);
     }
-
+    
+    
     @Test
-    public boolean comparaProduto() {
+    public void pegandoPreco() {
         produto = new Produto("Samsung Galaxy Duos", 500.0);
-        Produto produto2;
-        produto2 = new Produto("Samsung Galaxy Duos", 500.0);
-        return produto.equals(produto2);
+        assertTrue(produto.getPreco() == 500);
     }
+       
+    
+    @Test
+    public void ObjetosIguais() {
+        produto = new Produto("Samsung Galaxy Duos", 500.0);
+        Object obj = new Produto("Samsung Galaxy Duos", 60.0);
+        assertTrue(produto.equals(obj));
+    }
+    
+    
+    @Test
+    public void ProdutosIguais() {
+        produto = new Produto("Samsung Galaxy Duos", 500.0);
+  
+        Produto produto2 = new Produto("Samsung Galaxy Duos", 500.0);
+        assertTrue(produto.equals(produto2));
+        
+    }
+    
+    
 
     
 }

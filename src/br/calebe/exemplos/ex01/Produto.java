@@ -17,7 +17,7 @@ public class Produto {
     public double getPreco() {
         return preco;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         return equals((Produto) obj);
