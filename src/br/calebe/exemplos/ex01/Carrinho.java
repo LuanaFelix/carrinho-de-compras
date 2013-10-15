@@ -27,4 +27,30 @@ public class Carrinho {
         }
         return menor;
     }
+     
+    public boolean ProdutoRemoval(String nome) {
+        if(ProdutoSearch(nome))
+        {   	produtos.remove(produtos.indexOf(nome));
+        	return true;	
+	}
+        return false;
+    }
+
+	
+	public boolean ProdutoSearch(String nome) {
+            for (Produto produto : produtos) {
+                if (produto.getNome() == nome) {
+                    return true;
+                }}
+                return false;
+	}
+        
+      public int calcTotalTest(){
+               double total=0;
+               for(Produto p : produtos) {
+                    total += p.getPreco();
+            }
+               return (int) total;
+              
+        }
 }

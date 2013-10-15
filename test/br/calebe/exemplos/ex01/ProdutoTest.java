@@ -19,7 +19,7 @@ public class ProdutoTest {
     
     @Before
     public void criandoProduto() {
-        produto = new Produto("Samsung Galaxy Duos", 500.0);
+        produto = new Produto("Samsung Galaxy Duos",  500.0);
    
     }
     
@@ -33,7 +33,7 @@ public class ProdutoTest {
     
     @Test
     public void ObjetosIguais() {
-        produto = new Produto("Samsung Galaxy Duos", 500.0);
+        produto = new Produto("Samsung Galaxy Duos",  500.0);
         Object obj = new Produto("Samsung Galaxy Duos", 60.0);
         assertTrue(produto.equals(obj));
     }
@@ -43,7 +43,7 @@ public class ProdutoTest {
     public void ProdutosIguais() {
         produto = new Produto("Samsung Galaxy Duos", 500.0);
   
-        Produto produto2 = new Produto("Samsung Galaxy Duos", 500.0);
+        Produto produto2 = new Produto("Samsung Galaxy Duos",  500.0);
         assertTrue(produto.equals(produto2));
         
     }

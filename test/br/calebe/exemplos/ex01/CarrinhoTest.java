@@ -1,6 +1,7 @@
 package br.calebe.exemplos.ex01;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class CarrinhoTest {
     public void colocandoZeroProduto() throws CarrinhoVazioExpected {
         Produto menor;
         menor = carrinho.menorProduto();
-        assertArrayEquals(new Object[]{null}, new Object[]{menor});
+        assertEquals(null, menor);
         
     }
     
@@ -49,4 +50,37 @@ public class CarrinhoTest {
         original = carrinho.menorProduto();
         assertArrayEquals(new Object[]{original}, new Object[]{copia});
     }
+    
+     
+
+	@Test
+	public void removalTest() {
+		Produto p = new Produto("Samsung Galaxy Duos", 900.00);
+		carrinho.add(p);
+		carrinho.ProdutoRemoval("Samsung Galaxy Duos");
+		assertTrue(carrinho.getQuantity() == 0);
+	}
+
+	@Test
+	public void searchTest() {
+		Produto p = new Produto("Samsung Galaxy Duos", 400.00);
+		carrinho.add(p);
+		assertTrue(carrinho.ProdutoSearch("Samsung Galaxy Duos"));
+	}
+        
+        @Test
+        public void calcTotalTest(){
+               double total = 0;
+               Produto p1 = new Produto("Samsung Galaxy Duos", 400.00);
+               Produto p2 = new Produto("Iphone", 1400.00);
+               carrinho.add(p1);
+               carrinho.add(p2);
+               
+               for(Produto p : carrinho.produtos) {
+                    total += carrinho.produtos.getPreco();
+            }
+               assertEquals( (int) total, 1800 );
+              
+        }
+
 }
