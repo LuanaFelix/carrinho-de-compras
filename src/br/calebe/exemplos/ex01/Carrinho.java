@@ -14,7 +14,8 @@ public class Carrinho {
     public void add(Produto produto) {
         produtos.add(produto);
     }
-
+    
+    
     public Produto menorProduto() throws CarrinhoVazioExpected {
         if (produtos.isEmpty()) {
             throw new CarrinhoVazioExpected();
