@@ -15,6 +15,13 @@ public class Carrinho {
         produtos.add(produto);
     }
     
+    public int getQuantity(){
+        int quantidade = 0;
+        while (!produtos.isEmpty()) {
+            quantidade ++;
+        }
+        return quantidade;
+    }
     
     public Produto menorProduto() throws CarrinhoVazioExpected {
         if (produtos.isEmpty()) {
