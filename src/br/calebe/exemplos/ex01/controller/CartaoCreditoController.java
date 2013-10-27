@@ -6,7 +6,7 @@ package br.calebe.exemplos.ex01.controller;
 
 
 
-import br.calebe.exemplos.ex01.EJBStatelessInterface;
+import br.calebe.exemplos.ex01.CartaoCreditoInterface;
 import java.io.FileInputStream;
 import java.util.Properties;
 import javax.naming.InitialContext;
@@ -14,22 +14,22 @@ import javax.naming.InitialContext;
  *
  * @author Luana Felix
  */
-public class CartaoCreditoController implements EJBStatelessInterface {
+public class CartaoCreditoController implements CartaoCreditoInterface {
     
 
 
-    private EJBStatelessInterface ejb;
+    private CartaoCreditoInterface cartaoCredito;
 
     public CartaoCreditoController() throws Exception {
         Properties props = new Properties();
         props.load(new FileInputStream("jndi.properties"));
         InitialContext ctx = new InitialContext(props);
-        ejb = (EJBStatelessInterface) ctx.lookup("ejb/EJBStateless");
+        cartaoCredito = (CartaoCreditoInterface) ctx.lookup("ejb/CartaoCredito");
     }
 
     @Override
-    public String metodo(int i) {
-        return ejb.metodo(i);
+    public int consultNumero(int i) {
+        return cartaoCredito.consultNumero(i);
     }
     
 }

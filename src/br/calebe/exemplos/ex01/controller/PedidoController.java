@@ -5,7 +5,7 @@
 package br.calebe.exemplos.ex01.controller;
 
 import br.calebe.exemplos.ex01.PedidoInterface;
-import br.calebe.exemplos.ex02.ConsultStatusInterface;
+//import br.calebe.exemplos.ex02.ConsultStatusInterface;
 import java.io.FileInputStream;
 import java.util.Properties;
 import javax.naming.InitialContext;
