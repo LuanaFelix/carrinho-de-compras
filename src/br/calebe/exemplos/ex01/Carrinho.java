@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Carrinho {
 
-    private List<Produto> produtos;
+    protected List<Produto> produtos;
 
     public Carrinho() {
         produtos = new ArrayList<>();

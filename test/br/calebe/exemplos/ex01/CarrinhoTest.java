@@ -3,6 +3,7 @@ package br.calebe.exemplos.ex01;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.*;
 
 public class CarrinhoTest {
 
@@ -70,13 +71,16 @@ public class CarrinhoTest {
         @Test
         public void calcTotalTest(){
                double total = 0;
+               //ListIterator it = this.carrinho.produtos.listIterator();
                Produto p1 = new Produto("Samsung Galaxy Duos", 400.00);
                Produto p2 = new Produto("Iphone", 1400.00);
                carrinho.add(p1);
                carrinho.add(p2);
                
-               for(Produto p : carrinho.produtos) {
-                    total += carrinho.produtos.getPreco();
+               for(Produto p : this.carrinho.produtos) {
+                    total += this.carrinho.produtos.getPreco();
+                    
+                   
             }
                assertEquals( (int) total, 1800 );
               

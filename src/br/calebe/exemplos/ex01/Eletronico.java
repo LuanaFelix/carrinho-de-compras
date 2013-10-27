@@ -19,4 +19,11 @@ public class Eletronico extends Produto {
         this.Modelo = modelo;
     }
     
+    Eletronico() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public double getValor(){
+        return super.getPreco();
+    }
 }
